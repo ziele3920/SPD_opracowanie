@@ -1,0 +1,20 @@
+\section{Programowanie liniowe. Sformułowanie, metody rozwiązywania, przykład zastosowania.}
+
+	\subsection{Sformułowanie}
+	Klasa problemów, w której wszystkie warunki ograniczające oraz funkcja celu mają postać liniową.
+	Celem jest maksymalizacja (bądź minimalizacja) funkcji celu
+	$f(x_{1},x_{2},...,x_{n})=\sum\limits_{j=1}^n c_{j}x_{j}$
+	przy ograniczeniach 
+	$g_{i}(x_{1},x_{2},...,x_{2})=\sum\limits_{j=1}^n a_{ij}x{j}<=b_{i}, i=1,2,...,m$
+		
+		
+	\subsection{Metoda rozwiązania}
+	Jedną z metod rozwiązania jest algorytm sympleks. Wymaga on sprowadzenia zadania do postaci standardowej, w której ograniczenia mają postać równań (zamiast nierówności), wszystkie zmienne oraz prawe strony ograniczeń są nieujemne. W tym celu wprowadzamy zmienne uzupełniające, w razie potrzeby mnożymy równanie przez $-1$. Gdy zmienne decyzyjne mogą przyjmować wartości ujemne, zastępujemy każdą zmienną parą $x_{j}^{+}>=0, x_{j}^{-}>=0$, dodając ograniczenie $x_{j}=x_{j}^{+}-x_{j}^{-}$.
+	Schemat przeszukiwania:
+Zaczynając od pewnego rozwiązania bazowego dopuszczalnego, przechodzimy kolejno do innych rozwiązań bazowych dopuszczalnych, w każdym kroku zastępując jeden element zbioru bazowego innym, dopóki da się pomniejszać wartość funkcji celu.
+	\subsection{Przykłady zastosowania}
+\begin{itemize}
+\item wybór asortymentu produkcji – jakie wyroby i w jakich ilościach powinno produkować przedsiębiorstwo w celu zmaksymalizowania zysku lub przychodu ze sprzedaży
+\item optymalny dobór składu mieszanin – jakie ilości produktów żywnościowych należy zakupić, aby przy racjonalnym zaspokojeniu potrzeb organizmu obniżyć do minimum koszty wyżywienia
+\item wybór procesu technologicznego – określenie skali czy intensywności dostępnych procesów technologicznych, aby wytworzyć określone ilości produktów przy możliwie najniższych kosztach.
+\end{itemize}
