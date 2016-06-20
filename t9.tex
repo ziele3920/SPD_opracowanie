@@ -1,0 +1,53 @@
+\section{Optymalizacja systemu opartego na przepływie zadań (problem gniazdowy)}
+	\subsection{Sformułowanie}
+		Dane są:
+		\begin{itemize}
+			\item zbiór zadań $J={1, ..., n}$,
+			\item zbiór maszyn $M={1, ..., m}$,
+			\item zbiór operacji $O={1, ..., o}$
+		\end{itemize}				
+		Zbiór operacji jest dekomponowany na podzbiory odpowiadające zadaniom. Zatem zadanie $j$ składa się 
+		z sekwencji $o_j$ operacji, które powinny zostać wykonane w zadanej kolejności (zgodnie z kolejnością w podzbiorze 
+		$o_j$). Ponadto każda operacja musi zostać wykonana na przypisanej do niej maszynie, a maszyna może wykonywać
+		tylko jedną operację w danej chwili czasu. \newline
+		Na rozwiązanie dopuszczalne składa się wektor czasów rozpoczęcia wszystkich operacji. Najczęstszą formą funkcji celu
+		jest minimalizacja $C_{max}$ - terminu zakończenia wszystkich zadań.
+		
+	\subsection{Właściwości}
+		\begin{itemize}
+		\item Optymalizacja sprowadza się do rozwiązania problemu gniazdowego.
+			\item Problem można modelować za pomocą acyklicznego grafu $G(W)$, ($W$ - kompletna reprezentacja dopuszczalna).
+			\item Problem jest NP-trudny.
+		\end{itemize}			
+	
+	\subsection{Metoda rozwiązania}
+		Jedną z metod rozwiązania problemu gniazdowego jest skorzystanie z algorytmu aproksymacyjnego.
+		Nie generuje on rozwiązania optymalnego, jednakże jest bardzo wydajny obliczeniowo.
+		Podstawowy algorytm aproksymacyjny składa się  z trzech kroków:
+		\begin{enumerate}
+			\item Wygeneruj rozwiązanie $S$ spełniające tylko wymagania porządku technologicznego tzn. zachowującego
+			odpowiednią kolejność wykonywania operacji dla każdego zadania. Rozwiązanie takie jest niedopuszczalne, gdyż
+			więcej niż jedno zadanie może zostać przydzielone do maszyny w tym samym momencie czas.
+			W tym wypadku $C_{max}$ (dolne ograniczenie problemu gniazdowego) przyjmuje wartość $LB_J$ (suma czasów 
+			wykonania najdłuższego zadania).
+			\item Zaburz terminy rozpoczęcia operacji każdego zadania $i$ o wielkość $\delta_i$. Gdzie $\delta_i$
+			jest całkowitą liczbą losową z rozkładu równomiernego na przedziale $[0, LB_M]$, gdzie $LB_M$ to suma czasów
+			operacji na najbardziej "zajętej" (pracującej najdłużej) maszynie.
+			\item “Rozciągnij” i “spłaszcz” otrzymane uszeregowanie tak, by w każdym
+			momencie czasu na każdej maszynie było wykonywane nie więcej niż
+			jedno zadanie.
+		\end{enumerate}
+		
+		Inne metody służące do rozwiązania problemu gniazdowego:
+		\begin{itemize}
+			\item Schemat $B\&B$
+			\item Algorytmy priorytetowe
+			\item Przeszukiwania lokalne
+			\item Metoda przesuwnego wąskiego gardła
+			\item Symulowane wyżarzanie
+			\item Poszukiwanie z zakazami
+			\item Spełnianie ograniczeń
+			\item Poszukiwanie ewolucyjne
+			\item Podejście dualne
+			\item Sieci neuronowe
+		\end{itemize}
