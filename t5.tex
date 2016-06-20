@@ -1,0 +1,24 @@
+\section{Problem komiwojazera. Sformulowanie, wlasnosci i metoda rozwiazywania}
+
+\subsection{Sformulowanie}
+Dane jest n miast, ktore komiwojazer musi odwiedzic, oraz odleglosci miedzy kazda para miast. Celem jest znalezienie najkrotszej drogi laczacej wszystkie miasta zaczynajacej i konczocej sie w okreslonym punkcie. Sprowadza sie to do budowy grafu gdzie wierzcholki to miasta a wagi krawedzi to odleglosci miedzy nimi.
+\subsection{Wlasnosci}
+\begin{itemize}
+\item Z uwagi na to ze powstaly graf jest grafem pelnym to na pewno posiada przynajmniej jeden minimalny cykl Hamiltona ( problem zawsze ma rozwiazanie).
+\item Zagadnianie nalezy do problemow NP-trudnych - duza zlozonosc obliczeniowa wraz ze wzrostem liczby miast (nie wiadomo czy mozna rozwiazac w czasie wielomianowym).
+\end{itemize}
+
+
+\subsection{Metody}
+Do rozwiazywania tego rpoblemu stosuje sie metody przyblizone.
+Za pomoca metod programowania dynamicznego istnieje algorytm 'Held-Karp algorithm' (Helda-Karpia :D ?) ktory umozliwia rozwiazanie problemu w czasie$ O(n^22^n)$
+\\ Ale algorytmy dokladne wolno dzialaja i raczej stosuje sie przyblizone. Algorytm mrowkowy, Lin-Kernighan, NN ( nearest neighbour)
+
+Algorytm 2-optymalny - W podejściu tym bazujemy na obserwacji, iż krzyżujące się połączenia między miastami są zawsze gorsze niż takie, które się nie krzyżują.
+W algorytmie tym zatem sprawdza się wszystkie możliwe pary krawędzi i jeśli którakolwiek
+zawiera krawędzie krzyżujące się, następuje takie przestawienie czterech miast na trasie, by
+krzyżujące się krawędzie zostały zastąpione przez takie, które się nie krzyżują. Jednakże, brak
+krzyżujących się krawędzi wcale nie gwarantuje optymalności rozwiązania i cały proces
+przeważnie kończy się w minimum lokalnym. Aby „uciec” z tego minimum lokalnego
+wprowadzić można losowe zaburzenia do aktualnie najlepszej trasy 
+
