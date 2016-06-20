@@ -2,4 +2,4 @@
 
 wolne tematy
 
-10(fuuu), 12-ktoś udaje że zrobił?, 18, 19, 20, 21
+10(fuuu), 12-dokończyć?, 19, 20, 21
