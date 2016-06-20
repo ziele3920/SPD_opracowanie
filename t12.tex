@@ -1,21 +1,18 @@
-\section{Optymalizacja pracy linii wytwórczej (problem przepływowy).
-Sformułowanie, właściwości
-i metoda rozwiązywania.}
+\section{Balansowanie linii montażowej.
+Przykładowy problem i metoda rozwiązywania.
+Związek z 
+szeregowaniem.}
 
-	\subsection{Sformułowanie}
-		Zbiór zadań $J=(1,2,...,n)$ jest przeznaczony do wykonania w podanej kolejności na $M=(1,2,...,m)$ maszynach o ograniczonej jednostkowej przepustowości. Każde zadanie $j\in J$ składa się z ciągu operacji $(O_1j, ..., O_mj)$. Operacja $O_ij$ odpowiada nieprzerywalnemu wykonywaniu zadania $j$ na maszynie $i$ w czasie $p_ij$. Rozwiązaniem jest harmonogram pracy maszyn reprezentowany przez macierze terminów rozpoczęcia oraz zakończenia zadań spełniające powyższe ograniczenia. W praktyce rozwiącanie jest całkowicie określone przez jedną z macierzy, gdyż aby otrzymać drugą wystarczy dodać/odjąć czasy wykonywania zadań $p_ij$. 
-
+\subsection{Sformułowanie}
+Balansowanie linii montażowej (assembly line balancing) polega na równomiernym rozłożeniu operacji między stacje robocze linii tak, aby czas przestoju poszczególnych maszyn był minimalny. Zakłada się znajomość czasu wykonywania operacji na maszynach, relacje kolejnościowe pomiędzy operacjami oraz wielkość cyklu produkcyjnego lub liczby maszyn. Aby proces balansowania był zakończony należy przydzielić każdą operację raz i tylko do jednej stacji roboczej.
 		
-	\subsection{Własności}
-	Problemy przepływowe są NP-trudne (wyjąwszy niektóre szczególne przypdaki).
-	Dzielą się na dwa rodzaje:
+\subsection{Własności}
+Wyróżnia się dwa typy zagadnienia ALBP (assembly line balancing problem):
 \begin{enumerate}
-\item Ogólne - gdy kolejność wykonywania zadań na maszynie może być różna dla każdej maszyny
-\item Permutacyjne - gdy wszystkie permutacje są takie same (taka sama kolejność wykonywania zadań na wszystkich maszynach)
+\item ALBP I - celem jest uzyskanie minimalnej liczby stacji roboczych przy założeniu stałego i znanego czasu cyklu
+\item ALBP II - celem jest określenie minimalnej wartości cyklu przy stałej i znanej liczbie stacji roboczych
 \end{enumerate}
-	Problem permutacyjny jest częściej analizowany, głównie z powodu znacznie mniejszej ilości rozwiązań ($n!$, podczas gdy $n!^m$ dla problemu ogólnego. Często błąd pomiędzy rozwiązaniami jest optymalnymi obu typów problemów jest nieznaczny, czasem nawet rozwiązanie optymalne problemu ogólnego leży w klasie rozwiązań permutacyjnych. Rozwiązania problemów permutacyjnych mogą być wykorzystywane jako rozwiązania początkowe w algorytmach przybliżonych dla problemów ogólnych.
+Docelowo rozwiązanie obu problemów dąży do zwiększenia efektywności linii produkcyjnej - dla typu pierwszego jest to minimalizacja kosztów poprzez redukcję całkowitej ilości godzin pracy (np. zmniejszenie ilości pracowników). Dla typu drugiego skrócenie cyklu zwiększa przepustowość linii.
 	
 		
-	\subsection{Metoda rozwiązania}
-	Algorytm NEH - oparty na technice wcięć, do tej pory najlepszy wśród konstrukcyjnych algorytmów przybliżonych dla problemu permutacyjnego. Składa się z n-krokowej fazy zasadniczej poprzedzonej fazą wstępną. Zadania są sortowane nierosnąco po sumie czasów wykonań na maszynach. W fazie zasadniczej, w $j$-tym kroku, do istniejącej aktualnie permutacji, dokładane jest $j$-te zadanie z kolejki zadań wcześniej posortowanych. Jest ono wstawiane we wszystkie możliwe miejsca w akutalnej permutacji, dostarczając $j$ nowych permutacji. Permutacja o najmniejszej wartości funkcji celu przyjmowana jest jako najlepsza w tym kroku i uznawana za aktualną. 
-	Analogią działania jest pakowanie torby na wyjazd - najpierw pakujemy jeden lub kilka największych elemetów, po czym kolejne coraz mniejsze elementy metodą "dopychamy" metodą prób.
+\subsection{Metoda rozwiązania}
