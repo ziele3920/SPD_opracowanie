@@ -1,0 +1,10 @@
+\section{Optymalizacja pracy jednomaszynowego stanowiska krytycznego. Sformułownie, własności i metoda rozwiązania.}
+\subsection{Sformułowanie}
+Problem polega na znalezieniu optymalnego harmonogramu wykonywania zadan na maszynie mogacej wykonywac tylko jedno zadanie w danym czasie. Zadania są charakteryzowane poprzez termin dostepności, czas wykonywania na maszynia oraz czas dostarczenia. Czasami również dopuszcza się możliwość przerywania zadań.
+\subsection{Własność}
+\begin{itemize}
+\item problem NP-trudny, w szczególnych przypadkach istnieją algorytmy wielomianowe
+\item Istnieje wiele opisów (niekoniecznie jednoznacznych) tego problemu jednak $1|r_j,q_j|C_{max}$  jest najpopularniejszy ze względu na autosymetrie ( zamiana miejscami $r_j z q_j$ posiada tę samą optymalną permutacje).
+\end{itemize}
+\subsection{Metoda rozwiązania}
+Istnieje wiele metod rozwiązujących ten problem tak dokladnych jak i przyblizonych. Jednym z nich jest algorytm 2-aproksymacyjny S. Algorytm zakłada, ze jezeli maszyna jest wolna oraz co najmniej jedno zadanie jest gotowe do wykonania, nalezy skierowac do wykonania zadanie najpilniejsze ( to z najdluzszym czasem dostarczenia ).
