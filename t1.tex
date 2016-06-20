@@ -17,10 +17,37 @@
 	\begin{enumerate}
 		\item Metody dokładne
 			\begin{itemize}
-				\item Schemat podziału i ograniczeń (B\&B)
-				\item Schemat programowania dynamicznego
-				\item Programowanie liniowe całkowitoliczbowe
-				\item Programowanie liniowe binarne
-				\item Metody subgradientowe
+				\item Schemat podziału i ograniczeń (B\&B) - ogólne podejście oparte na dekompozycji
+				(podziału na mniejsze problemy, redukcja ograniczeń) i
+				"inteligentnym" przeszukiwaniu zbioru rozwiązań dopuszczalnych problemu optymalizacyjnego.
+				Znajduje zastosowanie w problemach silnie NP-trudnych. Dostarcza algorytmów o wykładniczej
+				złożoności obliczeniowej. Może być stosowany dla dowolnego problemu dyskretnego (liniowego i
+				nieliniowego).
+				\item Schemat programowania dynamicznego (PD) - podejście polegające na przekształceniu zadania
+				optymalizacji w wieloetapowy proces podejmowania decyzji, w którym stan na każdym etapie
+				zależy od decyzji wybieranej ze zbioru decyzji dopuszczalnych. Stany poprzednich etapów
+				zostają zapamiętane zatem eliminowana jest konieczność kilkukrotnego przeliczania tych 
+				samych rozwiązań (porozwiązywań). Złożoność algorytmów dla tego podejścia może być 
+				wielomianowa(max droga w grafie), pseudowielomianowa(problem załadunku) 
+				jak i wykładnicza(TSP).
+				\item Programowanie liniowe całkowitoliczbowe (PLC) - podejście w którym zarówno funkcja celu 
+				jak i zestaw ograniczeń składają się z funkcji liniowych z żądaniem aby wszystkie 
+				parametry były wyrażone liczbami całkowitymi.
+				\item Programowanie liniowe binarne (PLB) - tak jak PLC, w którym parametry przyjmują 
+				wartości binarne (0,1).
+				\item Metody subgradientowe - mogą byś stosowane dla przypadków, gdzie funkcja celu jest
+				funkcją ciągłą i subróżniczkowalną, posiadającą skończoną wartość ekstremum, a zbiór 
+				rozwiązań jest niepusty, domknięty i wypukły. Metody te s ą kosztowne obliczeniowo, a ich
+				szybkość zbiegania do rozwiązania optymalnego silnie zależy od przykładu problemu.
+			\end{itemize}
+		\item Metody przybliżone - są to metody, które nie znajdują rozwiązania optymalnego, lecz
+		rozwiązanie bliskie optymalnemu. Są stosowane tam, gdzie ważniejsze jest szybkie otrzymanie 
+		rozwiązania.
+			\begin{itemize}
+				\item Konstrukcyjne - szybkie, łatwe w implementacji lecz rozwiązanie dość znacznie
+				odbiega od rozwiązania optymalnego.
+				\item Poprawiające - wolniejsze, wymagają podania początkowego rozwiązania rozwiązania,
+				które poprawiają w kolejnych krokach. Dostarczają rozwiązań o bardzo dobrej i doskonałej
+				jakości. Umożliwiają kształtowanie kompromisu pomiędzy jakością a czasem obliczeń.
 			\end{itemize}
 	\end{enumerate}
