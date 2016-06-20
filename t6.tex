@@ -1,0 +1,33 @@
+\section{Problem plecaka}
+
+	\subsection{Sformułowanie}
+		Danych jest $n$ przedmiotów, każdy o objętości(wadze) $w_i$ oraz cenie(wartości) $c_i$.
+		Dany jest również plecak o pojemności $W$
+		Należy zapakować do plecaka przedmioty tak, aby ich sumaryczna wartość była możliwie jak największa przy
+		nie przekroczeniu objętości plecaka.
+		
+	\subsection{Własności}
+		\begin{itemize}
+			\item Problem jest NP-trudny.
+			\item Występuje w postaci ciągłej jak i dyskretnej.
+		\end{itemize}
+	\subsection{Metoda rozwiązania}
+		\begin{enumerate}
+			\item Metody dokładne
+			\begin{itemize}
+				\item Przegląd zupełny - generuje wszystkie dopuszczalne rozwiązania i z nich wybiera optymalne $O(2^n)$.
+				\item Programowanie dynamiczne - złożoność pseudowielomianowa. Dzieli zadanie na mniejsze - prostsze do 
+				rozwiązania. Na początku przyjmuje, że plecak ma pojemność 1, następnie generuje optymalne rozwiązanie
+				dla plecaka o takiej pojemności, zapamiętuje je i inkrementuje pojemność plecaka tym razem szukając 
+				rozwiązania optymalnego korzysta z wcześniej znalezionego rozwiązania dla mniejszej objętości plecaka.
+				Ten schemat jest powtarzany aż do osiągnięcia wymaganej pojemności plecaka wraz z rozwiązaniem optymalnym.
+			\end{itemize}
+			\item Metody przybliżone
+			\begin{itemize}
+				\item Algorytm zachłanny - polega na posortowaniu przedmiotów niemalejąco według stosunku ceny do wagi 
+				$\frac{c_i}{w_i}$. Następnie iterując całą posortowaną kolekcję od pierwszego elementu
+				 umieszcza kolejno w plecaku te przedmioty, które wraz z przedmiotami umieszczonymi wcześniej nie 
+				 przekraczają pojemności plecaka aż do końca kolejki lub całkowitego zapełnienia plecaka. 
+				 Złożoność algorytmu $O(n logn)$.
+			\end{itemize}
+		\end{enumerate}
