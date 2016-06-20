@@ -1,0 +1,66 @@
+\section{Modelowanie dodatkowych ograniczeń w problemach planowania}
+
+	W praktyce obok problemów przepływowych odpowiadających modelom
+	podstawowym pojawiają się problemy bardziej
+	złożone. Najczęściej są one pochodnymi zagadnienia podstawowego otrzymanymi
+	poprzez wprowadzenie dodatkowych ograniczeń o różnym charakterze.
+	
+	\subsection{Transport}
+	Przemieszczenie zadania pomiędzy maszynami w wielu przypadkach praktycznych jest tak duża, że modeluje się je jako
+	maszynę o nieograniczonej przepustowości. Co zwiększa jednak niepotrzebnie rozmiar modelu grafowego.
+	Aby tego uniknąć wystarczy dodatkowo obciążyć krawędzie grafu łączące operacje wykonywane na różnych maszynach
+	czasami transportów pomiędzy tymi maszynami.
+	\subsection{Przezbrojenia}
+	Przezbrojeniem nazywamy czas potrzebny na zmianę oprzyrządowania
+	maszyny w związku z wykonywanym zadaniem. Najbardziej ogólny przypadek
+	zakłada, że czas ten zależy od maszyny oraz pary kolejno realizowanych
+	po sobie zadań.
+	\subsection{Stanowska o nieograniczonej przepustowości}
+	Maszyna ma przepustowość $k$ jeżeli w dowolnym momencie może wykonywać nie więcej niż $k$ operacji równocześnie.
+	Zatem za maszynę o nieograniczonej przepustowości można uważać:
+	\begin{itemize}
+		\item urządzenie, które w sensie fizycznym pozwala obsługiwać jednocześnie
+		dowolnie wiele zadań, np. piec grzewczy,
+		\item maszynę o ograniczonej przepustowości, dla której czas trwania jest
+		nieporównywalnie mały w stosunku do maszyn sąsiednich przez co nie
+		obserwuje się występowania kolejki,
+		\item zbiór urządzeń fizycznych, identycznych funkcjonalnie i o tak dużej
+		liczności, że operacje realizowane na tych urządzeniach nie muszą być szeregowane,
+		\item maszynę otrzymaną poprzez zagregowanie (połączenie) podzbioru kolejnych
+		maszyn o nieograniczonej przepustowości,
+		\item maszynę fikcyjna realizującą proces wymagający upływu czasu lecz nie
+		angażujący urządzenia w sensie fizycznym (operacje starzenia, schnięcia,
+		dojrzewania, chłodzenia, itp.).
+	\end{itemize}
+	Termin gotowości zadania możemy interpretować jako wykonanie fikcyjnej operacji zadania na maszynie o 
+	nieograniczonej przepustowości. \newline
+	Problemy zawierające maszyny o nieograniczonej przepustowości zachowują
+	swoje własności związane ze ścieżką krytyczną w grafie oraz własności eliminacyjne dotyczące bloków zadań.
+	\subsection{Terminy dostępności}
+	Termin dostępności zadania możemy modelować jako wykonanie fikcyjnej operacji zadania na maszynie o 
+	nieograniczonej przepustowości.
+	
+	\subsection{Bufory}
+	Bufor jest miejscem do chwilowego składowania zadania przekazywanego
+	pomiędzy maszynami i jest zwykle związany z maszyną (bufor do maszyny).
+	W obszarze bufora tworzona jest kolejka zadań do obsługi. Pojemność
+	bufora jest rozumiana jako maksymalna liczba zadań, które mogą być składowane
+	równocześnie. Klasyczne problemy szeregowania przyjmują zwykle,
+	że pojemność bufora jest dowolnie duża (nieograniczona). Zadania, które po
+	zakończeniu wykonywania na maszynie nie mogą być przekazane do odpowiedniego
+	bufora pozostają na niej powodując zablokowanie tak długo aż
+	pojawi się wolne miejsce w buforze. Logiczne pojęcie bufora może modelować:
+	\begin{itemize}
+		\item fizyczne urządzenie procesu technologicznego,
+		\item ograniczony fizycznie obszar składowania,
+		\item fikcyjne wymaganie “wymuszajace” przepływ produkcji.
+	\end{itemize}
+	Generalnie, rozpatrywane są dwie kategorie problemów: (1) z buforem o
+	zerowej pojemności (ograniczenie no store, strategia NS), (2) z buforami o
+	skończonej, ograniczonej pojemności, różnej dla różnych maszyn (strategia
+	LS).
+	
+	\subsection{Czas cyklu}
+	Jest to ograniczenie, które zakłada cykliczność produkcji zatem maksymalny czas wykonania wszystkich zadań
+	jest ograniczony czasem cyklu. Gdy nie ma możliwości realizacji wszystkich zadań w jednym cyklu należy rozdzielić 
+	je na kilka cykli.
