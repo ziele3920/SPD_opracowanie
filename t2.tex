@@ -1,0 +1,34 @@
+\section{Optymalizacja procesu wytwarzania. Szeregowanie.}
+	\subsection{Optymalizacja procesu wytwarzania}
+	
+	Proces wytwarzania jest rozbudowanym zagadnieniem. W celu jego optymalizacji należy zwrócić uwagę na:
+	\begin{itemize}
+		\item synchronizację terminów dostaw z zapotrzebowaniami,
+		\item odpowiednim przydzieleniu w czasie zasobów do wykonywanych zadań,
+		\item podział zadań na partie produkcyjne,
+		\item uszeregowanie zadań (określenie ich terminów wykonywania na poszczególnych maszynach)	
+	\end{itemize}		
+	
+	\subsection{Szeregowanie}
+	Szeregowanie zadań w procesie wytwarzania jest kluczowym elementem optymalizacji tego procesu.
+	Na podstawie problemu praktycznego tworzony jest opis przy użyciu pojęć z teorii szeregowania, który
+	prowadzi do matematycznego modelu procesu. Symboliczny opis problemu szeregowania:
+	
+	\begin{equation}
+		\alpha|\beta|\gamma
+	\end{equation}
+	
+	$\alpha$ - typ zagadnienia, \newline
+	$\beta$ - dodatkowe ograniczenia, \newline
+	$\gamma$ - postać funkcji celu. \newline
+	
+	W typie zagadnienia zawarte są informacje o ilości maszyn, sposobie przejścia zadań przez system 
+	(typ zagadnienia: przepływowy, gniazdowy, równoległy) oraz o trybie realizacji poszczególnych operacji zadania. \newline
+	Pośród przykładowych dodatkowych ograniczeń można wymienić takie jak: prec - narzucony, częściowy porządek 
+	wykonywania zadań, pmtn - dopuszczenie możliwości przerwania wykonywania zadania, setup - wstępują czasy 
+	przezbrojenia maszyn pomiędzy wykonywaniem zadań i inne.  \newline
+	Przykładowa funkcja celu może być w postaci minimalizacji czasu wykonania wszystkich zadań. \newline
+	
+	Problem szeregowania zazwyczaj jest problemem NP-trudym. Istnieje wiele algorytmów dokładnych jak i przybliżonych
+	rozwiązujących problemy tego typu.
+	
