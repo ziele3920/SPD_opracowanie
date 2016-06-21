@@ -1,0 +1,29 @@
+\section{Przyblizone metody rozwiazywania zadan optymalizacji. Miary i metody oceny}
+
+\subsection{Tak ogolnie}}
+Przyblizone metody rozwiazywania zadan optymalizacji wyznaczaja takie rozwiazanie ktore jest blisko rozwiazania optymalnego. Z uwagi na to ze poruszane problemy sa zazwyczaj NP-trudne to nie dziwi ze takich metod jest wiecej.
+Miary oceny "dobroci" metody:
+\begin{enumerate}
+\item  zlozonosc obliczeniowa algorytmu
+\item dokladnosc przyblizenia
+\item gwarancja zbieznosci do rozwiazania optymalnego
+\item szybkosc zbieznosci do rozwiazania optymalnego
+\end{enumerate}
+
+\\ Blad przyblizenia algorytmu mozna liczyc na wiele roznych sposobow np tak:
+$BLAD = r. optymalne - r.otrzymane $\\
+$BLAD = r. optymalne /r.otrzymane $\\
+$BLAD = r. \frac{(r.optymalne - r.otrzymane)}{r.optymalne} $\\
+$BLAD = r. \frac{(r.optymalne - r.otrzymane)}{r.otrzymane} $\\
+
+
+Blad moze byc badany experymentalnie i teoretycznie - experyment najczesciej bo latwo, ale jest to subiektywne bo zalezy od probki przykladow. Dopiero wyniki analizy teoretycznej ( najgorsze przypadki etc.) w polaczeniu z wynikami analizy experymentalnej oraz zlozonosci obliczeniowej stanowia kompletna charakterystyke algorytmu.
+\\
+
+\subsection{Analiza experymentalna}
+Najpopularniejsza, niedokladna. Ocena a posteriori zachowania sie algorytmu (blad przyblizenia, czas pracy) w oparciu o wynik przebiegu na nieprecyzyjnej acz reprezentatywnej probce. Otrzymane wyniki nie zawsze dostatecznie dobrze odzwieciedlaja wlasnosci numeryczne algorytmu, gdyz nie zawsze do konca wiadomo co oznacza pojecie probki reprezentatywnej
+\subsection{Analiza najgorszegoprzypadku}
+Analiza najgorszego przypadku ocenia a priori zachowanie sie wybranego bledu na calej populacji przykladow. Wyznacza sie wspolczynnik najgorszego przypadku i asymptotyczny wspolczynnik najgorszego przypadku (trudne wzorki).  Taka analiza dostarcza skrajnie pesymistycznych wnioskow, nie jest powiedziane ze w praktyce taka sytuacja kiedokolwiek wystapi.
+
+\subsection{Analiza probabilistyczna}
+Analiza aprioryczna, zaklada ze kazdy przyklad zostal otrzymany jako realizacja pewnej niezaleznej zmiennej losowej o znanym rozkladzie ( najczesciej rown. ). W takim podejsciu blad przyblizenia rowniez jest zmienna losowa. Przy tych badaniach wnioskuje sie o jego rozkladach momentach a co najwazniejsze zbieznosci do jakiejs wartosci stalej wraz ze wzrostem liczby probek oraz o szybkosci tej zbieznosci. Bardzo skomplikowana analiza, dostarcza niezlych wynikow jednak malo algorytmow ma takie opracowanie bo trudno sie to robi.
