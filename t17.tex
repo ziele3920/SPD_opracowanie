@@ -1,0 +1,32 @@
+\section{Programowanie liniowe całkowitoliczbowe. Sformułowanie, metody
+rozwiązywania, przykład zastosowania.}
+\subsection{Sformułowanie}
+Programowanie liniowe, w którym na zmienne decyzyjne (niektóre lub wszystkie) nałożono dodatkowe warunki, że muszą przyjmować wartości całkowite dodatnie, ponieważ rozwiązania z wartościami ułamkowymi nie miałyby sensu rzeczywistego (np. określenia ⅔ osoby lub ¾ samochodu).
+
+W zagadnieniach programowania liniowego z reguły nie jest możliwe stosowanie zaokrągleń rozwiązań z wartościami ułamkowymi do najbliższych liczb całkowitych, gdyż wynik takiego postępowania może być daleki od rozwiązania optymalnego; może też nie spełniać warunków ograniczających. Przy programowaniu całkowitoliczbowym zachodzi więc potrzeba stosowania metod uwzględniających te warunki.
+
+Problemy programowania całkowitoliczbowego należą do klasy NP-zupełnej.
+
+
+\subsection{Metody rozwiązywania}
+Wyróżnia się trzy podejścia do rozwiązywania zagadnień programowania całkowitoliczbowego
+\begin{itemize}
+\item metody przeglądu pośredniego (niebezpośredniego), m.in. metody podziału i ograniczeń,
+Metoda podziału i ograniczeń jest oparta na podejściu “dziel i zwyciężaj”.
+Kluczowe fakty:\newline
+PCL= LP + ograniczenia całkowitoliczbowości\newline
+Fakt 1. Wartość optymalna funkcji celu LP jest górnym ograniczeniem (maksymalizacja
+funkcji celu) optymalnej wartości funkcji celu PCL.\newline
+Fakt 2. Wartość funkcji celu PCL dla dowolnego rozwiązania całkowitoliczbowego
+jest dolnym ograniczenie\newline
+\item metody płaszczyzn odcinających,
+\item metody oparte na dekompozycji (podziale).
+\end{itemize}
+
+
+\subsection{Przykład zastosowania}
+\begin{itemize}
+\item Wyznaczenie optymalnego planu produkcji maksymalizującego łączny zysk
+\item Wyznaczenie planu rozkroju desek minimalizując łączny odpad
+\item Problem plecakowy
+\end{itemize}
